@@ -13,5 +13,21 @@ class App extends Component {
     );
   }
 }
+import React, { Component } from 'react';
+import '../css/App.css';
+// import components
 
-export default App;
+class  Question Component extends Component {
+
+  render() {
+    return (
+      <div className="Question Component">
+        Trivia!
+        
+      </div>
+    );
+  }
+}
+
+
+export default Question Component;
