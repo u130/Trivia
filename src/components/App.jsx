@@ -1,33 +1,20 @@
-import React, { Component } from 'react';
-import '../css/App.css';
+import React, { Component } from "react";
+import "../css/App.css";
+import Question from "./Question.jsx";
+import Answer from "./Answer.jsx";
 // import components
 
 class App extends Component {
-
   render() {
     return (
-      <div className="app">
-        Trivia!
-        
+      <div>
+        <Question content={"#"} />
+        <Answer correct={false} content={"1"} />
+        <Answer correct={true} content={"2"} />
+        <Answer correct={false} content={"3"} />
+        <Answer correct={false} content={"4"} />
       </div>
     );
   }
 }
-import React, { Component } from 'react';
-import '../css/App.css';
-// import components
-
-class  Question Component extends Component {
-
-  render() {
-    return (
-      <div className="Question Component">
-        Trivia!
-        
-      </div>
-    );
-  }
-}
-
-
-export default Question Component;
+export default App;
