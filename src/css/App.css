@@ -12,3 +12,7 @@ body {
   width: 30%;
   height: 30%;
 }
+.question {
+  margin-top: 5%;
+  text-align: center;
+}
