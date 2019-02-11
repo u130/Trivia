@@ -12,10 +12,4 @@ class Answer extends Component {
   }
 }
 
-// class Question extends Component {
-//   render() {
-//     return <div className="Question Component">Trivia!</div>;
-//   }
-// }
-
 export default Answer;

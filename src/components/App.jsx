@@ -12,13 +12,24 @@ class App extends Component {
   constructor(props) {
     super(props);
     firebaseDatabase.ref("/questions").on("value", snapshot => {
-      let questions = snapshot.val();
+      let questions = [];
+      let choices = [];
       //let randomQuestion = getRandomQuestion(questions)
+
+      console.log(snapshot.val());
+      for (var key in snapshot.val()) {
+        questions.push(snapshot.val()[key]["question_text"]);
+      }
+
       this.setState({
-        questions: questions
+        questions: questions,
+        currentQuestions: {
+          question_text: questions,
+          choices: questions,
+          correct_choice_index: questions
+        }
         // currentQuestion: randomQuestion,
       });
-      console.log(snapshot.val());
     });
     this.state = {
       questions: {},
@@ -32,23 +43,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Question content={this.state.currentQuestion.question_text} />
-        <Answer
-          correct={false}
-          content={this.state.currentQuestion.choices[0]}
-        />
-        <Answer
-          correct={false}
-          content={this.state.currentQuestion.choices[1]}
-        />
-        <Answer
-          correct={true}
-          content={this.state.currentQuestion.choices[2]}
-        />
-        <Answer
-          correct={false}
-          content={this.state.currentQuestion.choices[3]}
-        />
+        <Question currentQuestion={this.state.currentQuestion} />
       </div>
     );
   }
