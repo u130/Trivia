@@ -5,7 +5,7 @@ import "../css/App.css";
 class Answer extends Component {
   render() {
     return (
-      <button className="answer">
+      <button onClick={() => this.props.Clickhandler()} className="answer">
         <div>{this.props.content}</div>
       </button>
     );
