@@ -3,9 +3,6 @@ import Answer from "./Answer.jsx";
 // import components
 
 class Question extends Component {
-  handleClick() {
-    alert("Click");
-  }
   render() {
     var data = this.props.currentQuestion;
     return (
@@ -15,22 +12,26 @@ class Question extends Component {
         <Answer
           correct={false}
           content={data.choices[0]}
-          Clickhandler={this.handleClick}
+          Clickhandler={this.props.handleClick}
+          index={0}
         />
         <Answer
           correct={false}
           content={data.choices[1]}
-          Clickhandler={this.handleClick}
+          Clickhandler={this.props.handleClick}
+          index={1}
         />
         <Answer
           correct={true}
           content={data.choices[2]}
-          Clickhandler={this.handleClick}
+          Clickhandler={this.props.handleClick}
+          index={2}
         />
         <Answer
           correct={false}
           content={data.choices[3]}
-          Clickhandler={this.handleClick}
+          Clickhandler={this.props.handleClick}
+          index={3}
         />
       </div>
     );

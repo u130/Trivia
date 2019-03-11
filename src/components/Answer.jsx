@@ -5,7 +5,10 @@ import "../css/App.css";
 class Answer extends Component {
   render() {
     return (
-      <button onClick={() => this.props.Clickhandler()} className="answer">
+      <button
+        onClick={() => this.props.Clickhandler(this.props.index)}
+        className="answer"
+      >
         <div>{this.props.content}</div>
       </button>
     );

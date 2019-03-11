@@ -40,10 +40,22 @@ class App extends Component {
       }
     };
   }
+
+  handleClick(index) {
+    if (this.state.currentQuestion.correct_choice_index == index) {
+      alert("correct");
+    } else {
+      alert("incorrect");
+    }
+  }
+
   render() {
     return (
       <div>
-        <Question currentQuestion={this.state.currentQuestion} />
+        <Question
+          handleClick={i => this.handleClick(i)}
+          currentQuestion={this.state.currentQuestion}
+        />
       </div>
     );
   }
