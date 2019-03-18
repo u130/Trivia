@@ -54,7 +54,7 @@ class App extends Component {
         currentQuestions: {
           question_text: currentQuestions.question_text,
           choices: currentQuestions.choices,
-          correct_choice_index: currentQuestions.correct_choice_index[count]
+          correct_choice_index: currentQuestions.correct_choice_index
         }
       });
     } else {
