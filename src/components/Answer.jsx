@@ -1,22 +1,17 @@
 import React, { Component } from "react";
+import { buildFirebase } from "../clients/firebase";
 import "../css/App.css";
 // import components
 
 class Answer extends Component {
-  constructor(props) {
-    super(props);
-    console.log(this.props.content);
-  }
   render() {
     return (
-      <div>
-        <button
-          onClick={() => this.props.Clickhandler(this.props.index)}
-          className="answer"
-        >
-          <div>{this.props.content[this.props.index]}</div>
-        </button>
-      </div>
+      <button
+        onClick={() => this.props.onClick(this.props.index)}
+        className="answer"
+      >
+        <div>{this.props.content}</div>
+      </button>
     );
   }
 }
