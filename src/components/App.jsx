@@ -6,6 +6,7 @@ import { buildFirebase } from "../clients/firebase";
 import { getRandomQuestion } from "../clients/firebase";
 // import components
 var count = 0;
+let allQuest = [];
 var firebaseDatabase = buildFirebase();
 
 class App extends Component {
@@ -17,6 +18,7 @@ class App extends Component {
 
     this.state = {
       currentQuestions: {
+        question_text: [""],
         choices: ["", "", "", ""],
         correct_choice_index: 0
       }
@@ -26,9 +28,10 @@ class App extends Component {
 
       for (var key in snapshot.val()) {
         questions.push(snapshot.val()[key]["question_text"]);
+        allQuest.push(snapshot.val()[key]);
         choices.push(snapshot.val()[key]["choices"]);
         correct_choice_index.push(snapshot.val()[key]["correct_choice_index"]);
-        console.log(choices[count]);
+        console.log();
       }
       this.setState({
         currentQuestions: {
@@ -46,14 +49,13 @@ class App extends Component {
       alert("correct");
       count++;
       console.log(count);
+      let currentQuestions = allQuest[count];
       this.setState({
         currentQuestions: {
-          question_text: this.state.currentQuestions.questions[count],
-          choices: this.state.currentQuestions.choices[count],
-          correct_choice_index: this.state.currentQuestions
-            .correct_choice_index[count]
+          question_text: currentQuestions.question_text,
+          choices: currentQuestions.choices,
+          correct_choice_index: currentQuestions.correct_choice_index[count]
         }
-        // currentQuestion: randomQuestion,
       });
     } else {
       alert("incorrect");
