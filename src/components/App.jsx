@@ -3,6 +3,7 @@ import "../css/App.css";
 import Question from "./Question.jsx";
 import Answer from "./Answer.jsx";
 import Score from "./score.jsx";
+import Reset from "./reset.jsx";
 import { buildFirebase } from "../clients/firebase";
 import { getRandomQuestion } from "../clients/firebase";
 // import components
@@ -81,11 +82,32 @@ class App extends Component {
     }
   }
 
+  resetClick(i) {
+    console.log(count, amount, wrong);
+    count = i;
+    amount = i;
+    wrong = i;
+    console.log(count, amount, wrong);
+    let currentQuestions = allQuest[count];
+    this.setState({
+      correct: amount,
+      incorrect: wrong,
+      currentQuestions: {
+        question_text: currentQuestions.question_text,
+        choices: currentQuestions.choices,
+        correct_choice_index: currentQuestions.correct_choice_index
+      }
+    });
+  }
+
   render() {
     return (
       <div>
         <div>
           <Score content={this.state.correct} total={wrong} />
+        </div>
+        <div>
+          <Reset content={"Reset"} resetClick={i => this.resetClick(0)} />
         </div>
         <div>
           <Question
