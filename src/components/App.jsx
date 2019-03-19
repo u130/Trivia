@@ -107,13 +107,13 @@ class App extends Component {
           <Score content={this.state.correct} total={wrong} />
         </div>
         <div>
-          <Reset content={"Reset"} resetClick={i => this.resetClick(0)} />
-        </div>
-        <div>
           <Question
             handleClick={i => this.handleClick(i)}
             currentQuestion={this.state.currentQuestions}
           />
+        </div>
+        <div>
+          <Reset content={"Reset"} resetClick={() => this.resetClick(0)} />
         </div>
         <div>
           <Answer

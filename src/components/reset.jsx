@@ -4,9 +4,11 @@ import React, { Component } from "react";
 class Reset extends Component {
   render() {
     return (
-      <button className="reset" onClick={this.props.resetClick}>
-        <span>{this.props.content}</span>
-      </button>
+      <div className="center">
+        <button className="reset" onClick={this.props.resetClick}>
+          <span>{this.props.content}</span>
+        </button>
+      </div>
     );
   }
 }
