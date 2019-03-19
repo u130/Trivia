@@ -1,9 +1,15 @@
-body {
+html {
   margin: 0;
   padding: 0;
   height: 100%;
   width: 100%;
-  background: linear-gradient(to bottom right, #e66465, #9198e5);
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
 }
 
 .app {
@@ -14,13 +20,39 @@ body {
   margin: 10%;
   width: 30%;
   height: 30%;
+  font: 18px arial, sans-serif;
   background: linear-gradient(to bottom right, #e66465, #9198e5);
   border-radius: 5px;
   padding: 20px;
-  border: 5px blue;
+  border: 0px;
+  color: white;
 }
 .question {
+  font: 25px arial, sans-serif;
   margin-top: 5%;
   text-align: center;
-  align-items: center;
+  background: linear-gradient(to right, white 80%, #00ccbc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.score {
+  font: 25px arial, sans-serif;
+  margin-top: 5%;
+  color: white;
+  width: 80%;
+  height: 30px;
+  padding: 10px;
+  text-align: center;
+  background: black;
+  margin: auto;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
 }

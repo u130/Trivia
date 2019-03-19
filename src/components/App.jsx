@@ -2,10 +2,13 @@ import React, { Component } from "react";
 import "../css/App.css";
 import Question from "./Question.jsx";
 import Answer from "./Answer.jsx";
+import Score from "./score.jsx";
 import { buildFirebase } from "../clients/firebase";
 import { getRandomQuestion } from "../clients/firebase";
 // import components
 var count = 0;
+var amount = 0;
+var wrong = 0;
 let allQuest = [];
 var firebaseDatabase = buildFirebase();
 
@@ -17,6 +20,8 @@ class App extends Component {
     let correct_choice_index = [];
 
     this.state = {
+      correct: amount,
+      incorrect: wrong,
       currentQuestions: {
         question_text: [""],
         choices: ["", "", "", ""],
@@ -47,10 +52,13 @@ class App extends Component {
     console.log(index);
     if (this.state.currentQuestions.correct_choice_index === index) {
       alert("correct");
+      amount++;
       count++;
       console.log(count);
       let currentQuestions = allQuest[count];
       this.setState({
+        correct: amount,
+        incorrect: wrong,
         currentQuestions: {
           question_text: currentQuestions.question_text,
           choices: currentQuestions.choices,
@@ -58,13 +66,27 @@ class App extends Component {
         }
       });
     } else {
+      wrong++;
       alert("incorrect");
+      let currentQuestions = allQuest[count];
+      this.setState({
+        correct: amount,
+        incorrect: wrong,
+        currentQuestions: {
+          question_text: currentQuestions.question_text,
+          choices: currentQuestions.choices,
+          correct_choice_index: currentQuestions.correct_choice_index
+        }
+      });
     }
   }
 
   render() {
     return (
       <div>
+        <div>
+          <Score content={this.state.correct} total={wrong} />
+        </div>
         <div>
           <Question
             handleClick={i => this.handleClick(i)}
