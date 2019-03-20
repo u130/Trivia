@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "../css/App.css";
 import Question from "./Question.jsx";
 import Answer from "./Answer.jsx";
+import Timer from "./timer.jsx";
 import Score from "./score.jsx";
 import Reset from "./reset.jsx";
 import { buildFirebase } from "../clients/firebase";
