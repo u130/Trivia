@@ -50,10 +50,12 @@ html {
 
 .left {
   float: left;
+  color: #e66465;
 }
 
 .right {
   float: right;
+  color: lightgreen;
 }
 
 .center {

@@ -9,6 +9,7 @@ class Answer extends Component {
       <button
         onClick={() => this.props.onClick(this.props.index)}
         className="answer"
+        id="toggle"
       >
         <div>{this.props.content}</div>
       </button>

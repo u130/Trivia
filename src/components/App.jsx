@@ -52,7 +52,6 @@ class App extends Component {
   handleClick(index) {
     console.log(index);
     if (this.state.currentQuestions.correct_choice_index === index) {
-      alert("correct");
       amount++;
       count++;
       console.log(count);
@@ -68,7 +67,6 @@ class App extends Component {
       });
     } else {
       wrong++;
-      alert("incorrect");
       let currentQuestions = allQuest[count];
       this.setState({
         correct: amount,
