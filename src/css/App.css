@@ -1,6 +1,7 @@
 #root {
-  padding: 10px;
+  padding: 0px;
   width: inherit;
+  height: inherit;
   position: absolute;
   top: 0px;
   left: 0px;
@@ -11,6 +12,14 @@
     ),
     linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
 }
 
 .app {
@@ -42,19 +51,22 @@
   font: 25px arial, sans-serif;
   margin-top: 5%;
   color: white;
-  width: 80%;
+  width: 100%;
   height: 30px;
-  padding: 10px;
   text-align: center;
   margin: auto;
+  position: relative;
+  left: 0px;
 }
 
 .left {
+  padding: 13px;
   float: left;
   color: #e66465;
 }
 
 .right {
+  padding: 13px;
   float: right;
   color: lightgreen;
 }
@@ -82,6 +94,7 @@
 #progressBar {
   width: 100%;
   position: relative;
+  top: 0px;
 }
 
 #timer {

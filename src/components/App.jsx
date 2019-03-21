@@ -5,7 +5,6 @@ import Answer from "./Answer.jsx";
 import Timer from "./timer.jsx";
 import Score from "./score.jsx";
 import Reset from "./reset.jsx";
-import timer from "../index.js";
 import { buildFirebase } from "../clients/firebase";
 import { getRandomQuestion } from "../clients/firebase";
 // import components

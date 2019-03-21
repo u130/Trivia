@@ -7,7 +7,6 @@ class Score extends Component {
       <div className="score">
         <span className="right"> Amount Correct: {this.props.content}</span>
         <span className="left">Amount Wrong: {this.props.total}</span>
-        <span className="final" />
       </div>
     );
   }
