@@ -8,6 +8,7 @@ import Reset from "./reset.jsx";
 import { buildFirebase } from "../clients/firebase";
 import { getRandomQuestion } from "../clients/firebase";
 // import components
+/*global $*/
 var count = 0;
 var amount = 0;
 var wrong = 0;
