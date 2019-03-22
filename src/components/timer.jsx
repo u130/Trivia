@@ -1,13 +1,21 @@
 const React = require("react");
 const ms = require("pretty-ms");
+
+function check(x, y) {
+  console.log(x, y);
+}
+
 class Timer extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      end: 20,
+      value: 0,
       time: 0,
       isOn: false,
       start: 0
     };
+    this.endTimer = this.endTimer.bind(this);
     this.startTimer = this.startTimer.bind(this);
     this.stopTimer = this.stopTimer.bind(this);
     this.resetTimer = this.resetTimer.bind(this);
@@ -21,10 +29,14 @@ class Timer extends React.Component {
     });
     this.timer = setInterval(
       () =>
-        this.setState({
-          time: Date.now() - this.state.start
-        }),
-      1
+        this.setState(
+          {
+            time: Date.now() - this.state.start,
+            value: this.state.value + 1
+          },
+          check(1, 2)
+        ),
+      1000
     );
   }
 
@@ -34,6 +46,10 @@ class Timer extends React.Component {
   }
 
   resetTimer() {
+    this.setState({ time: 0, isOn: false });
+  }
+
+  endTimer() {
     this.setState({ time: 0, isOn: false });
   }
 
@@ -56,7 +72,7 @@ class Timer extends React.Component {
       );
     return (
       <div>
-        <h3>timer: {ms(this.state.time)}</h3>
+        <h3>timer: {this.state.value}</h3>
         {start}
         {resume}
         {stop}
