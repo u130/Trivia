@@ -104,9 +104,6 @@ class App extends Component {
     return (
       <div>
         <div>
-          <Timer />
-        </div>
-        <div>
           <Score content={this.state.correct} total={wrong} />
         </div>
         <div>

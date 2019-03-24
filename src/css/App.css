@@ -1,10 +1,21 @@
 #root {
   padding: 0px;
   width: inherit;
-  height: inherit;
   position: absolute;
   top: 0px;
   left: 0px;
+  }
+
+html{
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0px;
+  padding: 0px;
   background: linear-gradient(
       217deg,
       rgba(255, 0, 0, 0.8),
@@ -12,14 +23,7 @@
     ),
     linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
     linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
-}
 
-html,
-body {
-  width: 100%;
-  height: 100%;
-  margin: 0px;
-  padding: 0px;
 }
 
 .app {
@@ -28,6 +32,8 @@ body {
 
 .answer {
   margin: 10%;
+  margin-bottom: 3%;
+  margin-top: 3%;
   width: 30%;
   height: 30%;
   font: 18px arial, sans-serif;
